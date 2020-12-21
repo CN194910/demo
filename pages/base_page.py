@@ -1,12 +1,12 @@
-import sys
 import time
-sys.path.append('..')
+import sys
+print(sys.path)
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from demo.utils.common_utils import CommonUtils
-
+from demo.utils.logger import Logger
 
 # this Base class is serving basic attributes for every single page inherited from Page class
 class BasePage(object):
@@ -14,11 +14,12 @@ class BasePage(object):
         self.base_url = base_url
         self.driver = driver
         self.timeout = timeout
+        Logger()
         
     def get_windows_img(self):
         screenshots_path = CommonUtils.make_direction('screenshots')
-        fp = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
-        screenshots_name  = fp + '.png'
+        rq = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
+        screenshots_name  = rq + '.png'
         self.driver.get_screenshot_as_file(CommonUtils.get_file_path(screenshots_name, screenshots_path))
 
     def find_element(self, *locator):
@@ -50,4 +51,4 @@ class BasePage(object):
             self.driver.quit()
 
 if __name__ == '__main__':
-	
+    BasePage()
