@@ -20,15 +20,16 @@ class CommonUtils(object):
         return new_path
     
     @staticmethod
-    def get_file_path(filename, path=None):
+    def get_file_path(path=None, filename):
         if path == None and filename:
             return filename
         elif filename:
-            return os.path.join(path, filename)         
-
+            return os.path.join(path, filename)
 
 
 if __name__ == '__main__':
+    import time
     print(CommonUtils.get_project_path())
-    print(CommonUtils.get_file_path('a', CommonUtils.make_direction('b')))
-    #print(CommonUtils.make_direction('Log'))
+    log_path = CommonUtils.make_direction('log')
+    rq = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
+    print(CommonUtils.get_file_path(rq+'.log', log_path))
