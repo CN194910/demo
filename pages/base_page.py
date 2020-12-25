@@ -40,9 +40,11 @@ class BasePage(object):
         logger.info('启动游览器，打开网址: '.format(url))
 
     def get_title(self):
+        longger.info('当前页面标题是：{}'.format(self.driver.title))
         return self.driver.title
 
     def get_url(self):
+        longger.info('当前页面URL是：{}'.format(self.driver.current_url))
         return self.driver.current_url
 
     def hover(self, *locator):
