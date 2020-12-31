@@ -6,7 +6,6 @@ import datetime
 from demo.utils.logger import Logger
 
 
-
 class CommonUtils(object):
 
     @staticmethod
