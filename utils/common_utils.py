@@ -3,7 +3,7 @@
 import os
 import time
 import datetime
-from demo.utils.logger import Logger
+#from demo.utils.logger import Logger
 
 
 class CommonUtils(object):
@@ -23,12 +23,9 @@ class CommonUtils(object):
         return new_path
     
     @staticmethod
-    def get_file_path(path=None, filename):
-        if path == None and filename:
-            return filename
-        elif filename:
-            return os.path.join(path, filename)
-            
+    def get_file_path(path, filename):
+        return os.path.join(path, filename)
+'''            
     @staticmethod
     def delete_files(path, offset):
         logger = Logger('delete_files').get_logger()
@@ -57,7 +54,7 @@ class CommonUtils(object):
                     #删除文件
                     os.remove(filename)
                     logger.info('删除文件: {},文件修改时间: {}'.format(filename, human_readable_time))
-
+'''
 
 if __name__ == '__main__':
     import time

@@ -11,15 +11,9 @@ logger = Logger('BasePage').get_logger()
 
 
 class BasePage(object):
-    def __init__(self, driver, bases_url=None):
+
+    def __init__(self, driver):
         self.driver = driver
-        self.root_url = bases_url if bases_url else s.root_url
-        
-    def open(self, url=None):
-        url = self.root_url + url
-        self.driver.get(url)
-        self.implicitly_wait(s.implicit_timeout)
-        logger.info('启动游览器，打开网址: '.format(url))
 
     def get_windows_img(self):
         screenshots_path = CommonUtils.make_direction('screenshots')
@@ -41,6 +35,13 @@ class BasePage(object):
     def find_elements(self, *locator):
         return self.driver.find_elements(*locator)
 
+    def input(self, *locator, text):
+        el = self.find_element(*locator)
+        el.clear()
+        logger.info('清空输入框')
+        el.send_keys(text)
+        logger.info('在输入框中输入{}'.format(text))
+
     def get_title(self):
         longger.info('当前页面标题是：{}'.format(self.driver.title))
         return self.driver.title
@@ -54,6 +55,9 @@ class BasePage(object):
         hover = ActionChains(self.driver).move_to_element(element)
         hover.perform()
 
+    def close(self):
+        self.driver.close()
+        logger.info('关闭游览器当前窗口')
 
 if __name__ == '__main__':
     BasePage()

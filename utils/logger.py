@@ -14,7 +14,7 @@ class Logger(object):
         self.logger.setLevel(logging.DEBUG)
         
         #设置日志名称及路径
-        rq = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
+        rq = time.strftime('%Y%m%d', time.localtime(time.time()))
         log_path = CommonUtils.make_direction('log')
         log_file_name = CommonUtils.get_file_path(log_path, rq+'.log')
         

@@ -1,0 +1,4 @@
+2021-01-10 16:26:15,600 - BrowserEngine - INFO - 火狐游览器已启动
+2021-01-10 16:26:18,902 - BrowserEngine - INFO - 打开网址: https://mail.126.com/?from=M126_LOGIN
+2021-01-10 16:26:19,889 - BrowserEngine - INFO - 游览器窗口最大化
+2021-01-10 16:26:19,905 - BrowserEngine - INFO - implicitly_wait: 5

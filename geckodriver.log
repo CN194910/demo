@@ -1,0 +1,11 @@
+1610243785654	geckodriver	INFO	Listening on 127.0.0.1:34103
+1610243785683	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile6w16xB"
+1610243789708	Marionette	INFO	Listening on port 32887
+1610243789721	Marionette	WARN	TLS certificate errors will be ignored for this session
+1610243797872	Marionette	INFO	Stopped listening on port 32887
+1610243807970	geckodriver	INFO	Listening on 127.0.0.1:58219
+1610243807984	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilebf1X2Q"
+1610243810617	Marionette	INFO	Listening on port 35833
+1610243810694	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/UrlClassifierListManager.jsm, line 691: TypeError: this.tablesData[table] is undefined
+1610243821150	Marionette	INFO	Stopped listening on port 35833
